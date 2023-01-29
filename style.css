@@ -1,0 +1,172 @@
+*{
+    box-sizing: border-box;
+}
+html, body{
+    margin:0;
+    padding: 0;
+    height: 100%;   
+
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: 17px;
+
+    /*colores para formulario*/
+    --color-focus: rgb(148, 100, 3);
+    --color-bordes: #aaaaaa;
+    --color-placeholder: rgb(169, 167, 165);
+}
+h1,
+h2 {
+    font-size: 27px;
+}
+a{
+    text-decoration: none;
+    color: var(--color-focus);
+    font-weight: 600;
+}
+/*layout////*/
+/*/////////*/
+.box{
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+}
+.side{
+    flex: 1 1 35%;
+    min-width: 200px; /*fuerza dos filas en tamaños pequeños*/
+    background: url(imag/bebe.jpg);
+    background-size: cover;
+}
+.logo{
+    color: var(--color-focus);
+    text-shadow: 1px 0px 1px rgb(54, 48, 48);
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+    padding-top:25px;
+    padding-bottom:25px;
+    background-color: rgba(245, 241, 241, 0.252);
+    bottom:50px;
+    margin-top: 39vw;
+    margin-bottom: 50px;
+ 
+}
+
+.main{
+    flex: 1 1 65%;
+    display: flex;
+    flex-flow: column;
+}
+
+/*secciones de main*/
+header,
+section,
+footer{
+    padding-left:6vw; 
+}
+header {
+    margin-top: 5vw;
+    margin-right: 2vw;
+}
+section{
+    flex: 2;
+    display: flex;
+    align-items: flex-end;
+    margin-top:2em;
+    margin-bottom:2em;
+}
+footer {
+    box-shadow: 5ex;
+    background-color: rgb(235, 233, 225);
+    flex:2;
+
+}
+.form_box {
+    display:flex;
+    flex-wrap: wrap;
+    max-width: 900px;
+}
+.form_field{
+    box-sizing: border-box;
+    flex: 1 1 50%;
+    min-width: 400px;
+    max-width: 450px;
+    align-self:flex-start;
+}
+
+/*form controls styling*/
+/*/////////////////////*/
+
+label{
+    appearance: none;
+    display: block;
+    padding-bottom: 5px;
+}
+legend{
+    padding-top:20px;
+    padding-bottom:20px;
+    font-weight: 600;
+
+}
+button,
+select,
+progress,
+meter,
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    appearance: none;
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+    width:350px;
+    padding: 10px;
+    margin-bottom:10px;
+    margin-top:5px;
+    border: 1px solid var(--color-bordes);
+    border-radius: 5px;
+}
+input:focus { 
+    outline:0; /*quita el borde en focus por defecto en los navegadores*/
+    border: 2px solid var(--color-focus);
+}
+/*muestra marca de contraseña in/válida*/
+
+input + span {
+    position: relative;
+}
+input + span::before {
+    position: absolute;
+    left:5px;
+    top: -2px;
+}
+input:invalid {
+/*border: 2px solid red;*/
+}
+input:invalid + span::before {
+    content: "✖";
+    color: var(--color-focus);
+}
+input:valid + span::before {
+    content: "✓";
+    color: green;
+}
+input::placeholder {
+    font-size: 14px;
+    color: var(--color-placeholder);
+}
+fieldset{
+    width: 100%;
+    border: 1px solid var(--color-bordes);
+    margin-top:10px;
+    margin-bottom:10px;
+    box-sizing: border-box;
+}
+button{
+    margin-top:2em;
+    background-color: var(--color-focus);
+    color: white;
+    font-weight: 400;
+}
+button:hover{
+background-color: var(--color-bordes);
+}
